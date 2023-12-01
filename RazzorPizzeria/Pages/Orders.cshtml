@@ -1,0 +1,45 @@
+﻿@page
+@model RazzorPizzeria.Pages.OrdersModel
+@{
+	var imageSrc = "~/images/basura.png";	
+}
+
+<h3>Orders</h3>
+<hr />
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				Id
+			</th>
+			<th>
+				PizzaName
+			</th>
+			<th>
+				Price
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var order in Model.PizzaOrders)
+		{
+			<tr>
+				<td>
+					@order.Id
+				</td>
+				<td>
+					@order.PizzaName
+				</td>
+				<td>
+					@order.BasePrice
+				</td>
+				<td>
+								<a class="btn btn-primary" asp-area="" asp-append-version=true asp-page="Delete" asp-route-Id=@order.Id asp-route-PizzaName=@order.PizzaName asp-route-Price=@order.BasePrice><img src="~/images/descargar.jpg" /></a>
+								<img src="~/images/9.jpg" />
+				
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

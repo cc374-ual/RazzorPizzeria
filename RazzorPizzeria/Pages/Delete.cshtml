@@ -1,0 +1,15 @@
+﻿@page
+@model RazzorPizzeria.Pages.DeleteModel
+@{
+}
+
+@if (Model.IsDeleted)
+{
+	Response.Redirect("Orders");
+}
+
+@if (!Model.IsDeleted)
+{
+	<h1>Ha ocurrido un error durante el proceso de eliminado</h1>
+	<a class="btn btn-primary" asp-page="Index">Volver a la página principal</a>
+}
